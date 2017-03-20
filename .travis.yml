@@ -1,2 +1,6 @@
+script:
+ "./build_all.sh"
 language: java
-script: "./build_all.sh"
+jdk:
+   -oraclejdk8
+
