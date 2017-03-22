@@ -1,26 +1,34 @@
-import java.util.Scanner;
-
+package ar.edu.untref.aydoo;
+import java.util.LinkedList;
 
 public class FactoresPrimos {
 
-	public static void main(String[] args){
-				
-		System.out.println("Ingrese un numero:");
-		Scanner ingreso = new Scanner(System.in);
 		
-		int factorPrimo;
-		int numero;
-		System.out.println(("Factores Primos de " + (numero = ingreso.nextInt())) + ":");
 		
-		for(factorPrimo = 2; factorPrimo<=numero; factorPrimo++){
+		private int factorPrimo;
+		private LinkedList<Integer> array;
+
+		public FactoresPrimos(){
+			this.array = new LinkedList<Integer>();
+		}	
+		
+		public void calcularFactor(int numero){
 			
-			while(numero % factorPrimo == 0){
-				System.out.println(factorPrimo);
-				numero /= factorPrimo;
+			    for(this.factorPrimo = 2; this.factorPrimo<=numero; this.factorPrimo++){
 				
-			}
+					while(numero % this.factorPrimo == 0){
+					
+						this.array.add((this.factorPrimo));
+						numero /= this.factorPrimo;
+					}
+			    }
+			   			
+		}	
+		public LinkedList imprimir(){
+		
+				return this.array;
+		
+		}
 			
-		}		
-	}
 
 }
