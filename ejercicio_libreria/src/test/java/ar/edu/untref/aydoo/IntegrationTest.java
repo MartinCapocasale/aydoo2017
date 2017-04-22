@@ -13,13 +13,14 @@ public class IntegrationTest {
 	private Periodico Clarin;
 	private Cliente Juan;
 	private Cliente Maria;
+	private Suscripcion unaSuscripcion;
 		
 	@Before
 	public void setup(){
 		Barcelona = new Revista(20,"quincenal");
 		ElGrafico = new Revista(30, "mensual");
-		elHobbit = new Libro(50,"unica");
-		Lapicera = new ArticuloDeLibreria(5,"unica");
+		elHobbit = new Libro(50,"unico");
+		Lapicera = new ArticuloDeLibreria(5,"unico");
 		Pagina12 = new Periodico(12,"diaria");
 		Clarin = new Periodico(13,"diaria");
 		Juan = new Cliente("Juan");
@@ -51,8 +52,45 @@ public class IntegrationTest {
 	
 	@Test 
     public void sePruebaElIvaEnArticuloDeLibreria() {
-		Producto lapicera = new ArticuloDeLibreria(5,"PorUnicaVez");
+		Producto lapicera = new ArticuloDeLibreria(5,"unico");
 		Assert.assertEquals(6.05, lapicera.getPrecio(),0.01);
+	}
+	
+	@Test
+	public void sePruebaCalcularMontoDeJuanComprandoUnPeriodico(){
+		miLibreria.nuevaCompra(new Compra(Juan, Clarin, 1, "enero"));
+		
+		double montoACobrar =  miLibreria.CalcularMontoACobrar("enero", Juan);
+		
+		Assert.assertEquals(13, montoACobrar,0.01);
+	}
+	
+	@Test
+	public void sePruebaCantidadDeVecesEnPeriodicidadEsDiaria(){
+		unaSuscripcion = new Suscripcion(Juan, Pagina12, "agosto","diaria");
+		
+		int cantidad = unaSuscripcion.getCantidadDeEjemplares();
+		
+		Assert.assertEquals(30, cantidad);
+	}
+	
+	@Test
+	public void sePruebaCantidadDeVecesEnPeriodicidadEsQuincenal(){
+		unaSuscripcion = new Suscripcion(Juan, Barcelona, "agosto", "quincenal");
+		
+		int cantidad = unaSuscripcion.getCantidadDeEjemplares();
+		
+		Assert.assertEquals(2, cantidad);
+	}
+	
+	@Test
+	public void sePruebaCantidadDeVecesEnPeriodicidadEsMensual(){
+
+		unaSuscripcion = new Suscripcion(Juan, ElGrafico, "agosto","mensual");
+		
+		int cantidad = unaSuscripcion.getCantidadDeEjemplares();
+		
+		Assert.assertEquals(1, cantidad);
 	}
 	
 }
