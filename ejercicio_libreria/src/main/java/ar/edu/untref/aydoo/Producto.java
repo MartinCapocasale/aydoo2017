@@ -10,16 +10,16 @@ public class Producto {
 		
 	}
 	
+	public String getPeriodicidad(){
+		return this.periodicidad;
+	}
+	
 	public void setPrecio(double precio) {
 		this.precioDeVenta = precio;
 	}
 	
 	public double getPrecio() {
 		return precioDeVenta;
-	}
-	
-	public String getPeriodicidad(){
-		return this.periodicidad;
 	}
 
 }
