@@ -48,7 +48,7 @@ public class Suscripcion {
 		int cantidadDeEjemplares = 0;
 		
 		switch (this.periodicidad){
-			case "diario":
+			case "diaria":
 				cantidadDeEjemplares = 30;
 				break;
 			case "quincenal":
