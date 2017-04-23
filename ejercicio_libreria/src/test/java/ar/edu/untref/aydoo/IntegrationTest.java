@@ -26,8 +26,8 @@ public class IntegrationTest {
 		Juan = new Cliente("Juan");
 		Maria = new Cliente("Maria");
 		miLibreria = new Libreria();
-		miLibreria.addCliente(Juan);
-		miLibreria.addCliente(Maria);
+		miLibreria.agregarCliente(Juan);
+		miLibreria.agregarCliente(Maria);
 	}
 	@Test
 	public void sePruebaCalcularMontoACobrarDeJuanCaso1(){
@@ -35,7 +35,7 @@ public class IntegrationTest {
 		miLibreria.nuevaCompra(new Compra(Juan, Lapicera, 2, "agosto"));
 		miLibreria.nuevaCompra(new Compra(Juan, ElGrafico, 1, "agosto"));
 		
-		double montoACobrarEnAgosto = miLibreria.CalcularMontoACobrar("agosto", Juan);
+		double montoACobrarEnAgosto = miLibreria.calcularMontoACobrar("agosto", Juan);
 		
 		Assert.assertEquals(92.1, montoACobrarEnAgosto,0.01);
 	}
@@ -45,7 +45,7 @@ public class IntegrationTest {
 		miLibreria.nuevaSuscripcion(new Suscripcion(Maria, Barcelona,"enero", "anual"));
 		miLibreria.nuevaCompra(new Compra(Maria, Pagina12, 1, "enero"));
 		
-		double montoACobrar = miLibreria.CalcularMontoACobrar("enero", Maria);
+		double montoACobrar = miLibreria.calcularMontoACobrar("enero", Maria);
 		
 		Assert.assertEquals(44, montoACobrar,0.01);
 	}
@@ -60,7 +60,7 @@ public class IntegrationTest {
 	public void sePruebaCalcularMontoDeJuanComprandoUnPeriodico(){
 		miLibreria.nuevaCompra(new Compra(Juan, Clarin, 1, "enero"));
 		
-		double montoACobrar =  miLibreria.CalcularMontoACobrar("enero", Juan);
+		double montoACobrar =  miLibreria.calcularMontoACobrar("enero", Juan);
 		
 		Assert.assertEquals(13, montoACobrar,0.01);
 	}
