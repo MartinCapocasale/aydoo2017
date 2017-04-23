@@ -1,7 +1,7 @@
 
 public class Suscripcion {
 	
-	private Cliente Cliente;
+	private Cliente cliente;
 	private Producto unProducto;
 	private String periodicidad; 
 	private String mes;
@@ -17,11 +17,11 @@ public class Suscripcion {
 	}
 	
 	public void setMiCliente(Cliente miCliente){
-		this.Cliente = miCliente;
+		this.cliente = miCliente;
 	}
 	
 	public Cliente getMiCliente(){
-		return Cliente;
+		return cliente;
 	}
 	
 	public Producto getNuevoProducto(){

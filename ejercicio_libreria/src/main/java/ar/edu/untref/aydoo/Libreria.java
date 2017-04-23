@@ -9,7 +9,7 @@ public class Libreria {
 	List<Suscripcion> listaDeSuscripciones = new LinkedList<Suscripcion>();
 	
 	
-	public double CalcularMontoACobrar(String mes, Cliente unCliente) {
+	public double calcularMontoACobrar(String mes, Cliente unCliente) {
 		double montoDescuento = 0;
 		double montoACobrar = 0;
 		Iterator<Compra> it = listaDeCompras.iterator();
@@ -42,7 +42,7 @@ public class Libreria {
 		listaDeCompras.add(nuevaCompra);
 	}
 	
-	public void addCliente(Cliente nuevoCliente) {
+	public void agregarCliente(Cliente nuevoCliente) {
 		listaDeClientes.add(nuevoCliente);
 	}
 	
