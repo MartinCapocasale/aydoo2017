@@ -56,7 +56,8 @@ public class IntegrationTest {
 		centroDeComputos.emitirVoto(votoB);
 
 		Assert.assertEquals("Romero", centroDeComputos.obtenerCandidatoConMasVotosObtenidosANivelNacional().getApellido());
-	}/*
+	}
+
 	@Test
 	public void partidoConMasVotosPorProvincia() {
 		CentroDeComputos centroDeComputos = new CentroDeComputos();
@@ -88,7 +89,7 @@ public class IntegrationTest {
 		centroDeComputos.emitirVoto(votoB);
 
 		Assert.assertEquals(unPartido, centroDeComputos.obtenerPartidoConMasVotosEnProvincia(unaProvincia));
-	}*/
+	}
 	
 	
 }
