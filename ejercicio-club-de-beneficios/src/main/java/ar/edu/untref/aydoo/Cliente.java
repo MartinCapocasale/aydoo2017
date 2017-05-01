@@ -1,13 +1,12 @@
 import java.util.LinkedList;
 import java.util.List;
 
-
 public class Cliente {
 
 	public String nombreCliente;
 	public String emailCliente;
 	public Tarjeta tipoDeTarjeta;
-//	private List<Operacion> operaciones = new LinkedList<Operacion>();
+	private List<Operacion> operaciones = new LinkedList<Operacion>();
 	
 	public Cliente(String nombre, String email,Tarjeta tarjeta) {
 		this.setNombre(nombre);
@@ -34,7 +33,7 @@ public class Cliente {
 	public Tarjeta getTarjeta(){
 		return tipoDeTarjeta;
 	}
-	/*
+	
 	public List<Operacion> getOperaciones() {
         return this.operaciones;
     }
@@ -64,5 +63,5 @@ public class Cliente {
     	}
     	return importe;
     }
-	*/
+	
 }
