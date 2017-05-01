@@ -52,6 +52,7 @@ public class Cliente {
     
     public void registrarOperacion(Operacion operacion) {
         this.operaciones.add(operacion);
+        
     }
     
     public double calculoDineroPagado(){
