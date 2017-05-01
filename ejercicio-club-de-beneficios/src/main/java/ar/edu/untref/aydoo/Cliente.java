@@ -38,14 +38,16 @@ public class Cliente {
         return this.operaciones;
     }
 
-    public double calcularAhorro() {
+    public double calcularAhorro(Mes mesACalcular) {
 
         double ahorro = 0;
         
         for(Operacion operacion : operaciones){
-            ahorro = ahorro + operacion.getImporte();
-        }
+        	if(operacion.getMes().equals(mesACalcular)){
+        		ahorro = ahorro + operacion.getImporte();
         
+        	}
+        }
         return ahorro;
     }
     
