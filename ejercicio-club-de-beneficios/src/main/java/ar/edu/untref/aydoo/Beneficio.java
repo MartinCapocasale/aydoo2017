@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.List;
+
 
 public class Beneficio {
 
@@ -20,11 +23,18 @@ public class Beneficio {
         return this.tarjeta;
     }
 
-    public int getValorBeneficio() {
-        return this.valor;
-    }
-    public void aplicarBeneficio(){
+    public List<Producto> getValorBeneficio(List<Producto> productos) throws ExcepcionBeneficio {
+    	List<Producto> unProducto = new  LinkedList<Producto>();
     	
+    	for(Producto producto : productos){
+    		double importe=0;
+    		
+    		importe = importe + producto.getImporte();
+    		producto.setBeneficio(importe - (((100- this.valor)* importe) / 100.0));
+    		unProducto.add(producto);
+    			
+    	}
+    	return unProducto;   	
     }
 	
 }
