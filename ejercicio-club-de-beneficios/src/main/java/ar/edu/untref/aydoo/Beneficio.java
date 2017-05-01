@@ -4,17 +4,23 @@ public class Beneficio {
     private Tarjeta tarjeta;
     private int valor;
 
-    public Beneficio(Tarjeta tarjeta, int valor) {
+    public Beneficio(Tarjeta tarjeta, int valor)throws ExcepcionBeneficio {
         this.tarjeta = tarjeta;
-        this.valor = valor;
+        int descuentoMinimo = 5;
+        
+        if(this.valor > descuentoMinimo){
+        	this.valor = valor;
+        }
+        else{
+        	throw new ExcepcionBeneficio();
+        }
     }
     
-    public Tarjeta obtenerTarjeta(){
+    public Tarjeta getTarjeta(){
         return this.tarjeta;
     }
 
-    public int obtenerValorBeneficio() {
-
+    public int getValorBeneficio() {
         return this.valor;
     }
     public void aplicarBeneficio(){
