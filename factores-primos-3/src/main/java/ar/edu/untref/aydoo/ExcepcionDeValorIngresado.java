@@ -1,8 +1,6 @@
-
 public class ExcepcionDeValorIngresado extends RuntimeException{
 		
-		public ExcepcionDeValorIngresado(){
+		public ExcepcionDeValorIngresado() {
 			super("El valor ingresado es invalido");
 		}
-
 }
