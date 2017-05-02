@@ -1,3 +1,10 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
 
 public class ConfiguracionDeArgumentos {
 	
@@ -60,6 +67,23 @@ public class ConfiguracionDeArgumentos {
 	
 	public void imprimirEnConsola(String texto) {
 		System.out.println(texto);
+	}
+	
+	public void imprimirEnArchivo(String nombreArchivo, String resultado) {
+		File archivo = new File(nombreArchivo);
+
+		try {
+			FileWriter write = new FileWriter(archivo);
+			BufferedWriter buffer = new BufferedWriter(write);
+			PrintWriter print = new PrintWriter(buffer);
+
+			print.write(resultado);
+			print.close();
+			buffer.close();
+		} 
+		catch (IOException e) {
+		}
+		
 	}
 
 }
