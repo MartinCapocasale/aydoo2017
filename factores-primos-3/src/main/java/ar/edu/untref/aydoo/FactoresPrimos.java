@@ -1,35 +1,30 @@
-import java.util.LinkedList;
 
 public class FactoresPrimos {
 
 		private int factorPrimo;
-		private LinkedList<Integer> array;
-
-		public FactoresPrimos(){
-			this.array = new LinkedList<Integer>();
-		}	
 		
-		public void calcularFactor(int numero) throws ExcepcionDeValorIngresado{
-
-			if (numero < 0) {
+		/*
+		 * pre: Se debe ingresar un numero.
+		 * post: Retorna una variable de tipo String con los factores primos.
+		 */
+	
+		public String calcularFactor(int numero) throws ExcepcionDeValorIngresado{
+				
+			String resultado = "";
+			
+			if (numero < 2) {
 				throw new ExcepcionDeValorIngresado();
 				
 			}
 			for(this.factorPrimo = 2; this.factorPrimo<=numero; this.factorPrimo++){
 				
 					while(numero % this.factorPrimo == 0){
-					
-						this.array.add((this.factorPrimo));
 						numero /= this.factorPrimo;
+						resultado = resultado + Integer.toString(this.factorPrimo)+" ";
 					}
-		    }	   			
+		    }
+			return resultado;
 		}	
-		
-		public LinkedList<Integer> imprimir(){
-		
-				return this.array;
-		
-		}
-				
+					
 }
 
