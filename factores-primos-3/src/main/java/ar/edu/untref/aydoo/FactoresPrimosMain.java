@@ -12,8 +12,12 @@ public class FactoresPrimosMain {
 		ConfiguracionDeArgumentos salida = new ConfiguracionDeArgumentos();
 		String resultadoFormateado = salida.setArgumentos(entrada.getNumero(), entrada.getFormato(), numeroFactorizado, entrada.getOrden());
 		
-		salida.imprimirEnConsola(resultadoFormateado);
-		
+		if(entrada.getNombreDeArchivo() != ""){			
+			salida.imprimirEnArchivo(entrada.getNombreDeArchivo(), resultadoFormateado);
+		}
+		else{			
+			salida.imprimirEnConsola(resultadoFormateado);
+		}
 	}	
 
 }
