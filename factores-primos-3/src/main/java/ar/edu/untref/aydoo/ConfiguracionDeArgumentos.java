@@ -4,12 +4,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
-
 public class ConfiguracionDeArgumentos {
-	
 
-	public String setArgumentos(int numero, String formato, String resultadoFactoreo, String orden){
+	public String setArgumentos(int numero, String formato, String resultadoFactoreo, String orden) {
 		String resultado = "";
 		
 		switch (formato.toLowerCase()) {
@@ -26,14 +23,13 @@ public class ConfiguracionDeArgumentos {
 			break;
 		}
 		return resultado;
-
 	}
+	
 	private String formatearPretty(String resultado, int numero, String orden) {
 
 		if (orden.equals("desc")) {
 			resultado = invertirPretty(resultado);
 		}
-		
 		return "Factores primos " + numero + ": " + resultado;
 	}
 
@@ -46,11 +42,11 @@ public class ConfiguracionDeArgumentos {
 		return resultado;
 	}
 	
-    private String invertir(String palabra){
+    private String invertir(String palabra) {
 		String resultado = "";
 		
-		for(int i = palabra.length()-2; i >= 0; i--){
-			resultado = resultado + palabra.substring(i,i+1);
+		for(int i = palabra.length()-2; i >= 0; i--) {
+			resultado = resultado + palabra.substring(i, i + 1);
 		}	
 		return resultado;
 	}
@@ -82,8 +78,6 @@ public class ConfiguracionDeArgumentos {
 			buffer.close();
 		} 
 		catch (IOException e) {
-		}
-		
+		}	
 	}
-
 }
