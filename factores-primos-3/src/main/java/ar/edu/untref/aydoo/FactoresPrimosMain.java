@@ -1,8 +1,6 @@
-
-
 public class FactoresPrimosMain {
 	
-	public static final void main(String args[]){
+	public static final void main(String args[]) {
 		 
 		FactoresPrimos factoresPrimos = new FactoresPrimos();
 		PasajeDeArgumentos entrada = new PasajeDeArgumentos(args);
@@ -12,12 +10,11 @@ public class FactoresPrimosMain {
 		ConfiguracionDeArgumentos salida = new ConfiguracionDeArgumentos();
 		String resultadoFormateado = salida.setArgumentos(entrada.getNumero(), entrada.getFormato(), numeroFactorizado, entrada.getOrden());
 		
-		if(entrada.getNombreDeArchivo() != ""){			
+		if(entrada.getNombreDeArchivo() != "") {			
 			salida.imprimirEnArchivo(entrada.getNombreDeArchivo(), resultadoFormateado);
 		}
 		else{			
 			salida.imprimirEnConsola(resultadoFormateado);
 		}
 	}	
-
 }
