@@ -1,10 +1,9 @@
 import java.util.Iterator;
 import java.util.LinkedList;
 
-
 public class Program {
 	
-	public static final void main(String args[]){
+    public static final void main(String args[]) {
 		 
         int numero = 0;
         
@@ -24,7 +23,7 @@ public class Program {
 
 		String formato = null ;
 		
-		if (args.length == 1){
+		if (args.length == 1) {
 			formato = "--format=pretty";
 		} 
 		
@@ -35,20 +34,20 @@ public class Program {
         switch (formato.toLowerCase()) {
          	
         	case "--format=pretty":
- 		    System.out.print("Factores primos: " + numero + ": ");
+ 		 System.out.print("Factores primos: " + numero + ": ");
  			
- 		    	while (it.hasNext()){
- 		    		System.out.print(it.next() + " ");
- 		    	}
-            break;
+ 		   while (it.hasNext()){
+ 		     	System.out.print(it.next() + " ");
+ 		   }
+           	break;
             
          	case "--format=quiet":
- 		     System.out.print("Factores primos: " + numero + ": ");
+ 		 System.out.print("Factores primos: " + numero + ": ");
         	 System.out.println();
         	 
-        	 	for(int j = resultado.size() - 1; j >= 0; j--){
-        	 		System.out.println(resultado.get(j));
-        	 	}
+        	   for(int j = resultado.size() - 1; j >= 0; j--) {
+        	 	System.out.println(resultado.get(j));
+        	   }
         	break;
         
          	default:
@@ -56,5 +55,4 @@ public class Program {
         }
         System.out.println();
     }
-
 }
