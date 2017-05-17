@@ -69,5 +69,18 @@ public class ConfiguracionDeArgumentosTest {
 		Assert.assertEquals("desc", nuevaEntrada.getOrden());
 		Assert.assertEquals("Formato no aceptado. Las opciones posibles son: pretty o quiet.",resultado);
 	}
+	
+	@Test
+	public void testFactoresPrimos90FormatoNoAceptadoAscendente() {
+		String args[] = { "90", "--format=chau", "--sort=asc" };
+		PasajeDeArgumentos nuevaEntrada = new PasajeDeArgumentos(args);
+		nuevaEntrada.analizarArgumentos();
+		
+		ConfiguracionDeArgumentos controlador = new ConfiguracionDeArgumentos();
+		String resultado = controlador.setArgumentos(90, "chau", "2 3 3 5 ", nuevaEntrada.getOrden());
+		
+		Assert.assertEquals("asc", nuevaEntrada.getOrden());
+		Assert.assertEquals("Formato no aceptado. Las opciones posibles son: pretty o quiet.",resultado);
+	}
 
 }
