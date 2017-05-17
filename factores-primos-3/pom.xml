@@ -102,7 +102,7 @@
                   <archive>
                     <manifest>
                       <addClasspath>true</addClasspath>
-                      <mainClass>FactoresPrimosMain</mainClass>
+                      <mainClass>Program</mainClass>
                     </manifest>
                   </archive>
                 </configuration>
