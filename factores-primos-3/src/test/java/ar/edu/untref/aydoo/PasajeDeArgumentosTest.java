@@ -2,6 +2,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class PasajeDeArgumentosTest {
+	
 	@Test
 	public void testDeOrdenDescendente() {
 		String args[] = { "90", "--format=pretty", "--sort=desc" };
@@ -24,6 +25,14 @@ public class PasajeDeArgumentosTest {
 		PasajeDeArgumentos nuevaEntrada = new PasajeDeArgumentos(args);
 		nuevaEntrada.analizarArgumentos();
 		Assert.assertEquals("pretty", nuevaEntrada.getFormato());
+	}
+	
+	@Test
+	public void testGetNombreDeArchivo() {
+		String args[] = { "90", "--output-file=salida.txt", "--format=quiet"};
+		PasajeDeArgumentos nuevaEntrada = new PasajeDeArgumentos(args);
+		nuevaEntrada.analizarArgumentos();
+		Assert.assertEquals("salida.txt", nuevaEntrada.getNombreDeArchivo());
 	}
 
 }
